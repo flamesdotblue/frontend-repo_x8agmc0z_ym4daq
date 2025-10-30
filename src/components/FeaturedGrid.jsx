@@ -37,24 +37,26 @@ const demoItems = [
 
 function ItemCard({ item }) {
   return (
-    <a href="#" className="group rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+    <a href="#" className="group rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03] shadow-sm hover:shadow-lg hover:shadow-violet-500/10 transition-shadow backdrop-blur">
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
           src={item.img}
           alt={item.title}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
           loading="lazy"
         />
-        <span className="absolute left-3 top-3 rounded-full bg-white/90 px-2 py-1 text-xs text-slate-700 shadow">{item.badge}</span>
+        <span className="absolute left-3 top-3 rounded-full bg-black/60 backdrop-blur px-2 py-1 text-xs text-violet-100 border border-white/10 shadow">
+          {item.badge}
+        </span>
       </div>
       <div className="p-4">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="font-medium text-slate-900 line-clamp-2">{item.title}</h3>
-          <span className="shrink-0 rounded-lg bg-indigo-600/10 px-2 py-1 text-sm font-semibold text-indigo-700">${item.price}</span>
+          <h3 className="font-medium text-white line-clamp-2">{item.title}</h3>
+          <span className="shrink-0 rounded-lg bg-violet-600/20 px-2 py-1 text-sm font-semibold text-violet-200">${item.price}</span>
         </div>
-        <div className="mt-2 flex items-center gap-1 text-amber-500">
+        <div className="mt-2 flex items-center gap-1 text-amber-400">
           <Star className="h-4 w-4 fill-current" />
-          <span className="text-sm text-slate-600">{item.rating}</span>
+          <span className="text-sm text-violet-200/80">{item.rating}</span>
         </div>
       </div>
     </a>
@@ -63,14 +65,14 @@ function ItemCard({ item }) {
 
 export default function FeaturedGrid() {
   return (
-    <section id="featured" className="py-16">
+    <section id="featured" className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900">Featured listings</h2>
-            <p className="mt-1 text-slate-600">Curated finds from trusted community sellers</p>
+            <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">Featured listings</h2>
+            <p className="mt-1 text-violet-200/80">Curated finds from trusted community sellers</p>
           </div>
-          <a href="#" className="text-indigo-700 hover:text-indigo-600">View all</a>
+          <a href="#" className="text-violet-300 hover:text-white">View all</a>
         </div>
 
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -80,20 +82,20 @@ export default function FeaturedGrid() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur">
             <div className="flex items-center gap-3">
-              <Shield className="h-5 w-5 text-emerald-600" />
-              <h3 className="font-medium text-slate-900">Secure payments</h3>
+              <Shield className="h-5 w-5 text-emerald-300" />
+              <h3 className="font-medium text-white">Secure payments</h3>
             </div>
-            <p className="mt-2 text-sm text-slate-600">Escrow-style checkout keeps transactions safe for buyers and sellers.</p>
+            <p className="mt-2 text-sm text-violet-200/80">Escrow-style checkout keeps transactions safe for buyers and sellers.</p>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-6">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur">
             <div className="flex items-center gap-3">
-              <Truck className="h-5 w-5 text-indigo-600" />
-              <h3 className="font-medium text-slate-900">Integrated shipping</h3>
+              <Truck className="h-5 w-5 text-violet-300" />
+              <h3 className="font-medium text-white">Integrated shipping</h3>
             </div>
-            <p className="mt-2 text-sm text-slate-600">Print labels in one click and track parcels right from your dashboard.</p>
+            <p className="mt-2 text-sm text-violet-200/80">Print labels in one click and track parcels right from your dashboard.</p>
           </div>
         </div>
       </div>
